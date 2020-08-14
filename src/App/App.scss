@@ -4,30 +4,12 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App__nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  justify-content: flex-start;
 
-.App-link {
-  color: #61dafb;
+  padding: 0;
+  margin-bottom: 200px;
 }
 
 .App__graveyard {
@@ -40,35 +22,48 @@
   background: linear-gradient(#989898, #242424);
 
   padding: 14px 20px 10px 20px;
+  margin: 30px 25px 0px 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App__graveyard:hover {
+  background: linear-gradient(#242424, #989898);
 }
 
-/* Ryan's code */
+.App__liveStudents {
+  transition: ease-in-out 100ms;
+  font-size: 1.5em;
+  font-family: $primary-font;
 
-.App__sharkImage {
+  background-color: transparent !important;
+  border-width: 0;
+  background: linear-gradient(#6e82df, #0b1090);
+
+  padding: 14px 20px 10px 20px;
+  margin: 30px 0px 0px 0px;
+}
+
+.App__liveStudents:hover {
+  background: linear-gradient(#0b1090, #6e82df);
+}
+
+.App__waves {
   position: absolute;
-  width: 200px;
+  bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+  z-index: 0;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App__sharkImage {
-    animation: sharkSpin infinite 11s linear;
-  }
-}
-
-@keyframes sharkSpin {
-  0% { left: -15%; bottom: 0%; }
-  50% { left: 100%; bottom: -5%; transform: rotateY(0deg);}
-  51% { transform: rotateY(180deg); }
-  100% { left: -15%; bottom: 0%; transform: rotateY(180deg); }
+.App__graveyardBackground {
+  position: fixed;
+  bottom: 0;
+	left: 0;
+	right: 0;
+	top: 62%;
+  z-index: 0;
+  width: 100%;
 }
 
 .App__backgroundWrap {
