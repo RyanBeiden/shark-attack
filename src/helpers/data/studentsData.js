@@ -132,7 +132,7 @@ const livingStudents = () => {
 
   students.forEach((response) => {
     if (response.isDead === false) {
-      livingStudents.push(response);
+      livingStudentsArr.push(response);
     }
   });
   return livingStudentsArr;
@@ -143,18 +143,15 @@ const dearlyBeloved = () => {
 
   students.forEach((response) => {
     if (response.isDead === true) {
-      livingStudents.push(response);
+      dearlyBelovedArr.push(response);
     }
   });
   return dearlyBelovedArr;
 };
 
 const followTheLight = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId) {
-      response.isDead = true;
-    }
-  });
+  const foundStudents = students.findIndex((student) => student.id === studentId);
+  students[foundStudents].isDead = true;
 };
 
 export default {
