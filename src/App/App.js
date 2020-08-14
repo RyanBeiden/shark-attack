@@ -31,8 +31,13 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <div className="App__backgroundWrap">
+          <div className="App__bubble bubble--size--large"></div>
+          <div className="App__bubble bubble--size--medium"></div>
+          <div className="App__bubble bubble--size--small"></div>
+        </div>
+        <img className="App__sharkImage" src="https://i.ibb.co/nBHbfx9/b-GXc-XEn-white-shark-clipart.png" alt="b-GXc-XEn-white-shark-clipart" border="0"/>
         <SharkTank livingStudents={livingStudents} followTheLight={this.followTheLight}/>
-        <div className="separator"></div>
         <Graveyard dearlyBeloved={dearlyBeloved}/>
       </div>
     );

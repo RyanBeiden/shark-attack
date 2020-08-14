@@ -37,7 +37,122 @@
   }
 }
 
-.separator {
-  background-color: red;
-  height: 5px;
+/* Ryan's code */
+
+.App__sharkImage {
+  position: absolute;
+  width: 200px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App__sharkImage {
+    animation: sharkSpin infinite 5s linear;
+  }
+}
+
+@keyframes sharkSpin {
+  0% { bottom: 10%; right: 5%; }
+  30% { right: 10%;}
+  72% { bottom: 15%; right: 5%; }
+  100% { bottom: 10%; right: 5%; }
+}
+
+.App__backgroundWrap {
+  bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
+
+.App__bubble {
+  border-radius: 50%;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+
+  position: absolute;
+}
+
+.bubble--size--large {
+  height: 200px;
+  width: 200px;
+  top: 10%;
+  left: 10%;
+}
+
+.bubble--size--large:after {
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.5)), color-stop(70%,rgba(255,255,255,0)));
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+
+  content: "";
+  height: 180px;
+  left: 10px;
+  position: absolute;
+  width: 180px;
+}
+
+.bubble--size--medium {
+  height: 120px;
+  width: 120px;
+  top: 40%;
+  left: 50%;
+}
+
+.bubble--size--medium:after {
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.5)), color-stop(70%,rgba(255,255,255,0)));
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+
+  content: "";
+  height: 100px;
+  left: 10px;
+  position: absolute;
+  width: 100px;
+}
+
+.bubble--size--small {
+  height: 50px;
+  width: 50px;
+  top: 20%;
+  left: 65%;
+}
+
+.bubble--size--small:after {
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.5)), color-stop(70%,rgba(255,255,255,0)));
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+
+  content: "";
+  height: 30px;
+  left: 10px;
+  position: absolute;
+  width: 30px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bubble--size--large {
+    animation: bubbleBounce infinite 10s linear;
+  }
+
+  .bubble--size--medium {
+    animation: bubbleBounce infinite 9s linear;
+  }
+
+  .bubble--size--small{
+    animation: bubbleBounce infinite 8s linear;
+  }
+}
+
+@keyframes bubbleBounce {
+  0% {
+		top: 100%;
+  }
+
+	100% {
+		top: 0;
+  }
 }
