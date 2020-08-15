@@ -12,7 +12,12 @@ class GraveStone extends React.Component {
     const { student } = this.props;
 
     return (
-      <p>{student.firstName} {student.lastName}</p>
+      <div className="GraveStone__studentStones">
+        <h2>Here Lies</h2>
+        <div className="GraveStone__separator"></div>
+        <h4>{student.firstName} {student.lastName}</h4>
+        <i className="fas fa-skull-crossbones"></i>
+      </div>
     );
   }
 }

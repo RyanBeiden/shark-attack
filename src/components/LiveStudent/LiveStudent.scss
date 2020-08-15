@@ -1,0 +1,15 @@
+.LiveStudent__studentCards {
+  align-self: center;
+  color: #fff;
+  margin: 15px;
+  transition: ease-in-out 200ms;
+}
+
+.LiveStudent__studentCards:hover {
+  transform: rotate(-10deg());
+}
+
+.LiveStudent__studentNames {
+  font-size: 3em;
+  text-align: center;
+}

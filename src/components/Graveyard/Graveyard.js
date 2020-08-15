@@ -13,12 +13,13 @@ class Graveyard extends React.Component {
 
   render() {
     const { dearlyBeloved } = this.props;
+
     const studentCards = dearlyBeloved.map((student) => (
       <GraveStone key={student.id} student={student} />
     ));
 
     return (
-      <div>
+      <div className="Graveyard__studentStones">
         { studentCards }
       </div>
     );

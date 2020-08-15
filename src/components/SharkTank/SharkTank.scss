@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+
+.SharkTank__attack {
+  position: fixed;
+  top: 3.2%;
+  right: 0;
+
+  margin: 0px 50px 50px 30px;
+  padding: 0;
+}
+
+.SharkTank__button {
+  font-size: 1.5em;
+  font-family: $primary-font;
+
+  background-color: transparent !important;
+  border-width: 0;
+  background: linear-gradient(#be0000, #710000);
+
+  padding: 14px 20px 10px 20px;
+}
+
+.SharkTank__button:hover {
+  background: linear-gradient(#710000, #be0000);
+}
+
+.SharkTank__studentCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+  margin: 35px 20px;
+}

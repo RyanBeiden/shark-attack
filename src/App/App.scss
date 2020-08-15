@@ -1,43 +1,129 @@
+@import '../styles/variables';
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App__nav {
+  display: flex;
+  justify-content: flex-start;
+
+  padding: 0;
+  margin-bottom: 200px;
 }
+
+.App__graveyard {
+  transition: ease-in-out 100ms;
+  font-size: 1.5em;
+  font-family: $primary-font;
+
+  background-color: transparent !important;
+  border-width: 0;
+  background: linear-gradient(#989898, #242424);
+
+  padding: 14px 20px 10px 20px;
+  margin: 30px 25px 0px 50px;
+}
+
+.App__graveyard:hover {
+  background: linear-gradient(#242424, #989898);
+}
+
+.App__liveStudents {
+  transition: ease-in-out 100ms;
+  font-size: 1.5em;
+  font-family: $primary-font;
+
+  background-color: transparent !important;
+  border-width: 0;
+  background: linear-gradient(#6e82df, #0b1090);
+
+  padding: 14px 20px 10px 20px;
+  margin: 30px 0px 0px 0px;
+}
+
+.App__liveStudents:hover {
+  background: linear-gradient(#0b1090, #6e82df);
+}
+
+.App__waves {
+  position: absolute;
+  bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+  z-index: 0;
+  width: 100%;
+}
+
+.App__graveyardBackground {
+  position: fixed;
+  bottom: 0;
+	left: 0;
+	right: 0;
+	top: 62%;
+  z-index: 0;
+  width: 100%;
+}
+
+.App__backgroundWrap {
+  bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
+
+.App__bubble {
+  border-radius: 50%;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+
+  position: absolute;
+}
+
+.bubble--size--large {
+  height: 200px;
+  width: 200px;
+  top: 10%;
+  left: 10%;
+}
+
+.bubble--size--medium {
+  height: 120px;
+  width: 120px;
+  top: 40%;
+  left: 50%;
+}
+
+.bubble--size--small {
+  height: 50px;
+  width: 50px;
+  top: 20%;
+  left: 65%;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .bubble--size--large {
+    animation: bubbleBounce infinite 10s linear;
+  }
+
+  .bubble--size--medium {
+    animation: bubbleBounce infinite 9s linear;
+  }
+
+  .bubble--size--small{
+    animation: bubbleBounce infinite 8s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes bubbleBounce {
+  0% {
+		top: 100%;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-.separator {
-  background-color: red;
-  height: 5px;
+	100% {
+		top: 0;
+  }
 }
